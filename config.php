@@ -67,12 +67,12 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 // pages in Moodle. Boost does not require these blocks because it provides other ways to navigate built into the theme.
 $THEME->requiredblocks = '';
 
-// Toggle display of blocks
-if ($THEME->settings->blockdisplay == 1) {
-    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
-} else {
+//// Toggle display of blocks
+//if ($THEME->settings->blockdisplay == 1) {
+//    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
+//} else {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-}
+//}
 
 // This setting defines the main scss file for our theme to be compiled. We could set it to a static file in the scss folder or to a function which returns the SCSS based on theme settings.
 $THEME->scss = function($theme) {
