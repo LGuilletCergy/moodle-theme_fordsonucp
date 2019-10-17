@@ -78,7 +78,11 @@ if ($THEME->settings->blockdisplay == 1) {
 $THEME->scss = function($theme) {
 
     // We need to load the config for our parent theme because that is where the preset setting is defined.
-    $parentconfig = theme_config::load('boost');
+    $parentconfig = theme_config::load('fordson');
     // Call a function from our parent themes lib.php file to fetch the content of the themes main SCSS file based on it's own config, not ours.
-    return theme_boost_get_main_scss_content($parentconfig);
+    return theme_fordson_get_main_scss_content($parentconfig);
 };
+
+// This is a function that returns some SCSS as a string to prepend to the main SCSS file.
+$THEME->prescsscallback = 'theme_fordsonucp_get_pre_scss';
+$THEME->extrascsscallback = 'theme_fordsonucp_get_extra_scss';

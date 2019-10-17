@@ -27,15 +27,26 @@
  * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * File : version.php
- * Version file
+ * File : lib.php
+ * Library file
  */
 
-defined('MOODLE_INTERNAL') || die();
+// Function to return the SCSS to prepend to our main SCSS for this theme.
+// Note the function name starts with the component name because this is a global function
+// and we don't want namespace clashes.
+function theme_fordsonucp_get_pre_scss($theme) {
+    // Load the settings from the parent.
+    $theme = theme_config::load('fordson');
+    // Call the parent themes get_pre_scss function.
+    return theme_fordson_get_pre_scss($theme);
+}
 
-$plugin->version   = 2019101702;
-$plugin->requires  = 2018051700;
-$plugin->component = 'theme_fordsonucp';
-$plugin->dependencies = array(
-    'theme_fordson'  => 2018062600,
-);
+// Function to return the SCSS to append to our main SCSS for this theme.
+// Note the function name starts with the component name because this is a global function
+// and we don't want namespace clashes.
+function theme_fordsonucp_get_extra_scss($theme) {
+    // Load the settings from the parent.
+    $theme = theme_config::load('fordson');
+    // Call the parent themes get_extra_scss function.
+    return theme_fordson_get_extra_scss($theme);          
+}
