@@ -74,8 +74,11 @@ if ($THEME->settings->blockdisplay == 1) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
 
-// This is the function that returns the SCSS source for the main file in our theme. We override the boost version because
-// we want to allow presets uploaded to our own theme file area to be selected in the preset list.
+// This setting defines the main scss file for our theme to be compiled. We could set it to a static file in the scss folder or to a function which returns the SCSS based on theme settings.
 $THEME->scss = function($theme) {
-    return theme_fordson_get_main_scss_content($theme);
+
+    // We need to load the config for our parent theme because that is where the preset setting is defined.
+    $parentconfig = theme_config::load('boost');
+    // Call a function from our parent themes lib.php file to fetch the content of the themes main SCSS file based on it's own config, not ours.
+    return theme_boost_get_main_scss_content($parentconfig);
 };
