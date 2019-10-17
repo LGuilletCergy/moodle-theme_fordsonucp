@@ -79,3 +79,8 @@ if ($THEME->settings->blockdisplay == 1) {
 $THEME->scss = function($theme) {
     return theme_fordsonucp_get_main_scss_content($theme);
 };
+
+static $fordsonconfig = null;
+if (empty($fordsonconfig)) {
+    $fordsonconfig = theme_config::load('fordson');
+}
