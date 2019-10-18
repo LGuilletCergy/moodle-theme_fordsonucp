@@ -33,7 +33,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019101703;
+$plugin->version   = 2019101800;
 $plugin->requires  = 2018051700;
 $plugin->component = 'theme_fordsonucp';
 $plugin->dependencies = [
