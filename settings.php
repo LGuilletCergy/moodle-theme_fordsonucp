@@ -27,13 +27,28 @@
  * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * File : fr/theme_fordsonucp.php
- * French language file
+ * File : settings.php
+ * Settings file. Actual settings are in other files.
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Fordson UCP';
-$string['region-side-pre'] = 'Droite';
-$string['choosereadme'] = 'Un thème héritant de Fordson et modifié pour les besoins de l\'université de Cergy-Pontoise.';
-$string['privacy:metadata'] = 'Le thème Fordson UCP ne stocke pas de données utilisateurs.';
+if ($ADMIN->fulltree) {
+    // Note new tabs layout for admin settings pages.
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingfordsonucp',
+            get_string('configtitle', 'theme_fordson'));
+
+    require('settings/presets_settings.php');
+    require('settings/presets_adjustments_settings.php');
+    require('settings/menu_settings.php');
+    require('settings/content_settings.php');
+    require('settings/fpicons_settings.php');
+    require('settings/footer_settings.php');
+    require('settings/image_settings.php');
+    require('settings/colours_settings.php');
+    require('settings/markettiles_settings.php');
+    require('settings/slideshow_settings.php');
+    // OCJ HILLBROOK MOD
+    require('settings/modchooser_settings.php');
+    require('settings/customlogin_settings.php');
+}

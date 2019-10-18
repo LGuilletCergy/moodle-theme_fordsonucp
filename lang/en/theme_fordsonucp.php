@@ -31,6 +31,8 @@
  * English language file
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 $string['pluginname'] = 'Fordson UCP';
 $string['region-side-pre'] = 'Right';
 $string['choosereadme'] = 'A theme inheriting from Fordson with added functionalities'
