@@ -94,6 +94,7 @@ $THEME->extrascsscallback = 'theme_fordsonucp_get_extra_scss';
 $THEME->layouts = [
     // The site home page.
     'frontpage' => [
+        'theme' => 'boost',
         'file' => 'frontpage.php',
         'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'fp-c',
@@ -101,22 +102,26 @@ $THEME->layouts = [
     ],
     // Main course page.
     'course' => [
+        'theme' => 'boost',
         'file' => 'course.php',
         'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'fp-c',
     ],
     'incourse' => [
+        'theme' => 'boost',
         'file' => 'course.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
     'coursecategory' => [
+        'theme' => 'boost',
         'file' => 'columns2.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
     // Server administration scripts.
     'admin' => [
+        'theme' => 'boost',
         'file' => 'columns2.php',
         'regions' => ['side-pre', 'fp-c'],
         'defaultregion' => 'fp-c',
