@@ -52,7 +52,7 @@ $THEME->editor_sheets = [];
 // We could add more than one parent here to inherit from multiple parents, and if we did they would be processed in
 // order of importance (later themes overriding earlier ones). Things we will inherit from the parent theme include
 // styles and mustache templates and some (not all) settings.
-$THEME->parents = ['fordson'];
+$THEME->parents = ['boost', 'fordson'];
 
 // A dock is a way to take blocks out of the page and put them in a persistent floating area on the side of the page. Boost
 // does not support a dock so we won't either - but look at bootstrapbase for an example of a theme with a dock.
@@ -76,9 +76,6 @@ if ($THEME->settings->blockdisplay == 1) {
 } else {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
-
-
-
 
 // This setting defines the main scss file for our theme to be compiled. We could set it to a static file in the scss folder or to a function which returns the SCSS based on theme settings.
 $THEME->scss = function($theme) {
