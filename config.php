@@ -33,6 +33,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Call the theme lib file.
+require_once(__DIR__ . '/lib.php');
+
 $THEME->name = 'fordsonucp';
 
 // This setting list the style sheets we want to include in our theme. Because we want to use SCSS instead of CSS - we won't
@@ -73,6 +76,9 @@ if ($THEME->settings->blockdisplay == 1) {
 } else {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
+
+
+
 
 // This setting defines the main scss file for our theme to be compiled. We could set it to a static file in the scss folder or to a function which returns the SCSS based on theme settings.
 $THEME->scss = function($theme) {
