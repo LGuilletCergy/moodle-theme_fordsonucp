@@ -15,22 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Initially developped for :
- * Université de Cergy-Pontoise
- * 33, boulevard du Port
- * 95011 Cergy-Pontoise cedex
- * FRANCE
+ * Colours settings page file.
  *
- * UCP fordson based theme
- *
- * @package   theme_fordsonucp
- * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- * File : settings/colours_settings.php
- * Settings files copied from Fordson.
+ * @packagetheme_fordson
+ * @copyright  2016 Chris Kenniburg
+ * @creditstheme_fordson - MoodleHQ
+ * @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordsonucp_colours', get_string('colours_settings', 'theme_fordson'));
@@ -94,6 +85,14 @@ $page->add(new admin_setting_heading('theme_fordsonucp_colours', get_string('col
     $name = 'theme_fordsonucp/topnavbarbg';
     $title = get_string('topnavbarbg', 'theme_fordson');
     $description = get_string('topnavbarbg_desc', 'theme_fordson');
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Top navbar background setting.
+    $name = 'theme_fordsonucp/topnavbarteacherbg';
+    $title = get_string('topnavbarteacherbg', 'theme_fordson');
+    $description = get_string('topnavbarteacherbg_desc', 'theme_fordson');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

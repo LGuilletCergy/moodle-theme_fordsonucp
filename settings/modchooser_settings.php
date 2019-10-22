@@ -15,21 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Initially developped for :
- * Université de Cergy-Pontoise
- * 33, boulevard du Port
- * 95011 Cergy-Pontoise cedex
- * FRANCE
- *
- * UCP fordson based theme
- *
- * @package   theme_fordsonucp
- * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- * File : settings/modchooser_settings.php
- * Settings files copied from Fordson.
- */
+* Presets settings page file.
+*
+* @package    theme_fordson
+* @copyright  2017 OCJ
+* @credits    theme_boost - MoodleHQ
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
 
 defined('MOODLE_INTERNAL') || die();
 

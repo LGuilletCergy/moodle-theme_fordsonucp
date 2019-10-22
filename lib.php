@@ -34,6 +34,14 @@
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
 
+
+function theme_fordsonucp_css_tree_post_processor($theme) {
+    // Load the settings from the parent.
+    $theme = theme_config::load('fordson');
+    // Call the parent themes get_pre_scss function.
+    return theme_fordson_css_tree_post_processor($theme);
+}
+
 // Function to return the SCSS to prepend to our main SCSS for this theme.
 // Note the function name starts with the component name because this is a global function
 // and we don't want namespace clashes.

@@ -15,21 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Initially developped for :
- * Université de Cergy-Pontoise
- * 33, boulevard du Port
- * 95011 Cergy-Pontoise cedex
- * FRANCE
- *
- * UCP fordson based theme
- *
- * @package   theme_fordsonucp
- * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- * File : settings/presets_adjustements_settings.php
- * Settings files copied from Fordson.
- */
+* Heading and course images settings page file.
+*
+* @packagetheme_fordson
+* @copyright  2016 Chris Kenniburg
+* @creditstheme_fordson - MoodleHQ
+* @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -138,7 +130,7 @@ $page->add($setting);
 $name = 'theme_fordsonucp/gutterwidth';
 $title = get_string('gutterwidth', 'theme_fordson');
 $description = get_string('gutterwidth_desc', 'theme_fordson');;
-$default = '4rem';
+$default = '0rem';
 $choices = array(
         '0rem' => '0rem',
         '1rem' => '1rem',
@@ -166,7 +158,7 @@ $page->add($setting);
 // Block and Content widths
 $name = 'theme_fordsonucp/blockwidthfordson';
 $title = get_string('blockwidthfordson', 'theme_fordson');
-$description = get_string('blockwidthfordson_desc', 'theme_fordson');;
+$description = get_string('blockwidthfordsonucp_desc', 'theme_fordson');;
 $default = '280px';
 $choices = array(
         '280px' => '250px',

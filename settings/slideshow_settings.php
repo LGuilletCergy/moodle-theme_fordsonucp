@@ -15,21 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Initially developped for :
- * Université de Cergy-Pontoise
- * 33, boulevard du Port
- * 95011 Cergy-Pontoise cedex
- * FRANCE
+ * Heading and course images settings page file.
  *
- * UCP fordson based theme
- *
- * @package   theme_fordsonucp
- * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- * File : settings/slideshow_settings.php
- * Settings files copied from Fordson.
+ * @packagetheme_fordson
+ * @copyright  2016 Chris Kenniburg
+ * @creditstheme_boost - MoodleHQ
+ * @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordsonucp_slideshow', get_string('slideshowsettings', 'theme_fordson'));

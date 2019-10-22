@@ -15,20 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Initially developped for :
- * Université de Cergy-Pontoise
- * 33, boulevard du Port
- * 95011 Cergy-Pontoise cedex
- * FRANCE
+ * Heading and course images settings page file.
  *
- * UCP fordson based theme
- *
- * @package   theme_fordsonucp
- * @copyright 2019 Laurent Guillet <laurent.guillet@u-cergy.fr>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- * File : settings/menu_settings.php
- * Settings files copied from Fordson.
+ * @packagetheme_fordson
+ * @copyright  2016 Chris Kenniburg
+ * @creditstheme_boost - MoodleHQ
+ * @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -51,7 +43,7 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Frontpage Textbox.
+// Dashboard Teacher Textbox.
 $name = 'theme_fordsonucp/coursemanagementtextbox';
 $title = get_string('coursemanagementtextbox', 'theme_fordson');
 $description = get_string('coursemanagementtextbox_desc', 'theme_fordson');
@@ -60,12 +52,35 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Frontpage Textbox.
+// Dashboard Student Textbox.
 $name = 'theme_fordsonucp/studentdashboardtextbox';
 $title = get_string('studentdashboardtextbox', 'theme_fordson');
 $description = get_string('studentdashboardtextbox_desc', 'theme_fordson');
 $default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Navbar Color switch toggle based on role
+$name = 'theme_fordsonucp/navbarcolorswitch';
+$title = get_string('navbarcolorswitch','theme_fordson');
+$description = get_string('navbarcolorswitch_desc', 'theme_fordson');
+$default = '1';
+$choices = array(
+	'1' => get_string('navbarcolorswitch_on', 'theme_fordson'),
+	'2' => get_string('navbarcolorswitch_off', 'theme_fordson'),
+	);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+
+// Show/hide course editing cog.
+$name = 'theme_fordsonucp/showactivitynav';
+$title = get_string('showactivitynav', 'theme_fordson');
+$description = get_string('showactivitynav_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

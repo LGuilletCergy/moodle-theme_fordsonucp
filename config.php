@@ -58,7 +58,6 @@ $THEME->editor_sheets = [''];
 $THEME->layouts = [
     // The site home page.
     'frontpage' => [
-        'theme' => 'boost',
         'file' => 'frontpage.php',
         'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'fp-c',
@@ -66,31 +65,37 @@ $THEME->layouts = [
     ],
     // Main course page.
     'course' => [
-        'theme' => 'boost',
         'file' => 'course.php',
         'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'fp-c',
     ],
     'incourse' => [
-        'theme' => 'boost',
         'file' => 'course.php',
-        'regions' => ['side-pre'],
+        'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'side-pre',
     ],
     'coursecategory' => [
-        'theme' => 'boost',
         'file' => 'columns2.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
+
     // Server administration scripts.
     'admin' => [
-        'theme' => 'boost',
         'file' => 'columns2.php',
         'regions' => ['side-pre', 'fp-c'],
         'defaultregion' => 'fp-c',
     ],
 ];
+
+if ($THEME->settings->enhancedmydashboard == 1 && $THEME->settings->blockdisplay == 1) {
+    $THEME->layouts['mydashboard'] = [
+        'file' => 'mydashboard.php',
+        'regions' => ['fp-a', 'fp-b', 'fp-c'],
+        'defaultregion' => 'fp-c',
+        'options' => ['nonavbar' => true, 'langmenu' => true],
+    ];
+}
 if ($THEME->settings->blockdisplay == 2) {
     $THEME->layouts['course'] = [
         'file' => 'course.php',
@@ -101,6 +106,14 @@ if ($THEME->settings->blockdisplay == 2) {
         'file' => 'frontpage.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
+    ];
+}
+if ($THEME->settings->blockdisplay == 2 && $THEME->settings->enhancedmydashboard == 1) {
+    $THEME->layouts['mydashboard'] = [
+        'file' => 'mydashboard.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true, 'langmenu' => true],
     ];
 }
 
@@ -114,7 +127,7 @@ $THEME->scss = function($theme) {
 };
 
 // Call css/scss processing functions and renderers.
-$THEME->csstreepostprocessor = 'theme_fordson_css_tree_post_processor';
+$THEME->csstreepostprocessor = 'theme_fordsonucp_css_tree_post_processor';
 $THEME->prescsscallback = 'theme_fordsonucp_get_pre_scss';
 $THEME->extrascsscallback = 'theme_fordsonucp_get_extra_scss';
 // Most themes will use this rendererfactory as this is the one that allows the theme to override any other renderer.
@@ -123,7 +136,11 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 // Toggle display of blocks
 if ($THEME->settings->blockdisplay == 1) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
-} else {
+}
+if (page_location_incourse_themeconfig()) {
+    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+}
+if ($THEME->settings->blockdisplay == 2) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
 
