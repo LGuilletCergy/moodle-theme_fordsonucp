@@ -34,7 +34,6 @@
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
 
-require_once(__DIR__ . '/../fordson/lib/scss_lib.php');
 require_once(__DIR__ . '/../fordson/lib/filesettings_lib.php');
 require_once(__DIR__ . '/../fordson/lib/fordson_lib.php');
 
