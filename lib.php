@@ -61,3 +61,7 @@ function theme_fordsonucp_get_extra_scss($theme) {
     // Call the parent themes get_extra_scss function.
     return theme_fordson_get_extra_scss($theme);
 }
+
+require('../fordson/lib/scss_lib.php');
+require('../fordson/lib/filesettings_lib.php');
+require('../fordson/lib/fordson_lib.php');
