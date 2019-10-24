@@ -34,10 +34,9 @@
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
 
-require_once(__ROOT__ . '/theme/fordson/lib/scss_lib.php');
-require_once(__ROOT__ . '/theme/fordson/lib/filesettings_lib.php');
-require_once(__ROOT__ . '/theme/fordson/lib/fordson_lib.php');
-
+require_once(__DIR__ . '/../fordson/lib/scss_lib.php');
+require_once(__DIR__ . '/../fordson/lib/filesettings_lib.php');
+require_once(__DIR__ . '/../fordson/lib/fordson_lib.php');
 
 function theme_fordsonucp_css_tree_post_processor($theme) {
     // Load the settings from the parent.
