@@ -158,7 +158,7 @@ $page->add($setting);
 // Block and Content widths
 $name = 'theme_fordsonucp/blockwidthfordson';
 $title = get_string('blockwidthfordson', 'theme_fordson');
-$description = get_string('blockwidthfordsonucp_desc', 'theme_fordson');;
+$description = get_string('blockwidthfordson_desc', 'theme_fordson');;
 $default = '280px';
 $choices = array(
         '280px' => '250px',
