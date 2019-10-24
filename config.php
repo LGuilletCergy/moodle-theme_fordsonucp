@@ -137,9 +137,9 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 if ($THEME->settings->blockdisplay == 1) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
 }
-if (page_location_incourse_themeconfig()) {
-    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-}
+//if (page_location_incourse_themeconfig()) {
+//    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+//}
 if ($THEME->settings->blockdisplay == 2) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
